@@ -21,3 +21,16 @@ spec:
          limits:
            memory: "128Mi"
            cpu: "500m"
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
